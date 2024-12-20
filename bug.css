@@ -1,0 +1,10 @@
+The following CSS code snippet demonstrates an uncommon issue where the use of `calc()` with percentages within a `transform: translate()` property can lead to unexpected results when applied to an element with a specified width.
+
+```css
+div {
+  width: 50%;
+  transform: translateX(calc(50% - 25px));
+}
+```
+
+The intention is to shift the div 25 pixels to the left from its center. However, `calc()` evaluates the percentage *after* the `transform` is applied, leading to inconsistent results.
