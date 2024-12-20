@@ -1,0 +1,20 @@
+The solution avoids using `calc()` within the `translate()` property when working with percentages. A more reliable method is to directly set the `left` property to achieve the desired horizontal shift.
+
+```css
+div {
+  width: 50%;
+  left: 25%;
+  position: relative;
+}
+```
+
+Alternatively, if absolute positioning isn't suitable, using `margin` can provide a solution.  For example, moving the element 25 pixels to the left can be achieved with:
+
+```css
+div {
+  width: 50%;
+  margin-left: -25px; 
+}
+```
+
+This way avoids the ambiguity of `calc()` within the transformation and yields a consistent result.
